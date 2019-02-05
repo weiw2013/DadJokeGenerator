@@ -1,0 +1,7 @@
+{
+  "words" : {
+    "_start" : [ "this", "is" ],
+    "this" : [ "is" ],
+    "is" : [ "test", "a" ]
+  }
+}

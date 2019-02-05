@@ -1,0 +1,93 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>DadJokeGenerator</groupId>
+	<artifactId>DadJokeGenerator</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.mashape.unirest</groupId>
+			<artifactId>unirest-java</artifactId>
+			<version>1.4.9</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.9.8</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.8</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.9.8</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.14.3</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.beust</groupId>
+			<artifactId>jcommander</artifactId>
+			<version>1.48</version>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<profiles>
+	    <profile>
+	        <id>joke</id>
+	        <build>
+	            <plugins>
+	                <plugin>
+	                    <groupId>org.codehaus.mojo</groupId>
+	                    <artifactId>exec-maven-plugin</artifactId>
+	                    <version>1.4.0</version>
+	                    <configuration>
+	                        <mainClass>com.dadjokegenerator.DadJokeGeneratorApp</mainClass>
+	                    </configuration>
+	                </plugin>
+	            </plugins>
+	        </build>
+	    </profile>
+	    <profile>
+	        <id>model</id>
+	        <build>
+	            <plugins>
+	                <plugin>
+	                    <groupId>org.codehaus.mojo</groupId>
+	                    <artifactId>exec-maven-plugin</artifactId>
+	                    <version>1.4.0</version>
+	                    <configuration>
+	                        <mainClass>com.dadjokegenerator.training.MarkovChainGenerator</mainClass>
+	                    </configuration>
+	                </plugin>
+	            </plugins>
+	        </build>
+	    </profile>
+	</profiles>
+</project>

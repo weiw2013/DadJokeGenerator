@@ -1,0 +1,10 @@
+.idea
+target
+bin
+.DS_Store
+test-output
+
+# mvn
+.project
+.settings
+.classpath
